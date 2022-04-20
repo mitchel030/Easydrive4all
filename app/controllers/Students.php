@@ -17,10 +17,15 @@ class Students extends Controller
     $data = null;
     // Check if POST is send
     if (isset($_POST)) 
-      {
+    {
         // Check if submit button is pressed
         if (isset($_POST["submit"])) 
         {
+          $data = [
+            'naam'=> $_POST['naam'],
+            'studentennummer'=> $_POST['studentennummer'],
+            'item'=> $_POST['item']
+          ];
           // Put post values into variables
           $naam = $_POST["naam"];
           $studentennummer = $_POST["studentennummer"];
@@ -42,10 +47,28 @@ class Students extends Controller
               
           }
         }
+
+        $requests = $this->userModel->getRequest();
+
+        $requestRows = "";
+        foreach ($requests as $r) {
+          $requestRows .= "<tr>";
+          $requestRows .= "<td>".$r->studentenid."</td>";
+          $requestRows .= "<td>".$r->naam."</td>";
+          $requestRows .= "<td>".$r->studentennummer."</td>";
+          $requestRows .= "<td>".$r->item."</td>";
+          $requestRows .= "</tr>";
+        }
+
+
+      $this->view('students/request', $request = [
+        "message" => $data,
+        "requestRows" => $requestRows
+      ]);
         
 
-}
-
-    $this->view('students/request', $data);
+    } 
   }
+  
+
 }

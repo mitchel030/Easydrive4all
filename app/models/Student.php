@@ -16,7 +16,7 @@ class Student
 
     //SQL Statement
     $sql = "INSERT INTO `request` 
-                            (`id`,
+                            (`studentenid`,
                              `naam`, 
                              `studentennummer`, 
                              `item`) 
@@ -42,5 +42,11 @@ class Student
         // This happens if query fails
         return "Failed";
     }
+  }
+  public function getRequest() {
+    $sql = "SELECT * FROM `request`;";
+    $this->db->query($sql);
+    $request = $this->db->resultSet();
+    return $request;
   }
 }
