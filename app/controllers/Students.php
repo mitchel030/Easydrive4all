@@ -40,6 +40,7 @@ class Students extends Controller
             if ($message = "success") {
               //Gelukt
               $data = "<h1>".$message."</h1>";
+              header("Location: request");
             } else {
               //Gefaald
               $data = "<h1>".$message."</h1>";
@@ -58,6 +59,13 @@ class Students extends Controller
           $requestRows .= "<td>".$r->studentennummer."</td>";
           $requestRows .= "<td>".$r->item."</td>";
           $requestRows .= "</tr>";
+          $requestRows .= "<td>
+														<a class='btn btn-xs btn-info' href=/students/edit?studentenid=$r->studentenid>Edit
+													</td>";
+			$requestRows .= "<td>
+														<a class='btn btn-xs btn-info' href=/students/destroy?studentenid=$r->studentenid>Delete
+													</td>";
+			$requestRows .= "</tr>";
         }
 
 
@@ -69,6 +77,31 @@ class Students extends Controller
 
     } 
   }
-  
+  public function edit()
+	{
+		$data = $this->userModel->edit();
+		$this->view('students/edit', $data);
+	}
+
+	//Updates the information in database through userModel
+	public function update($studentenid)
+	{
+		$naam = $_POST['naam'];
+    var_dump($naam);
+		$studentennummer = $_POST['studentennummer'];
+		$item = $_POST['item'];
+
+		$this->userModel->update($studentenid, $naam, $studentennummer, $item);
+		//Redirect to students view
+		$this->redirect('students');
+	}
+
+	//Delete through userModel and redirect to students view
+	public function destroy()
+	{
+		$this->userModel->destroy();
+
+		$this->redirect('students');
+	}
 
 }
