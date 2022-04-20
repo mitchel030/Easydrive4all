@@ -22,15 +22,15 @@ class Students extends Controller
         if (isset($_POST["submit"])) 
         {
           // Put post values into variables
-          $product = $_POST["inputProduct"];
-          $amount = $_POST["inputAmount"];
-          $reason = $_POST["inputReason"];
+          $naam = $_POST["inputnaam"];
+          $studentennummer = $_POST["inputstudentennummer"];
+          $item = $_POST["inputitem"];
 
           //Check if variables are not empty
-          if (!empty($product) && !empty($amount) && !empty($reason)) 
+          if (!empty($naam) && !empty($studentennummer) && !empty($item)) 
           {
             //Initiate requestArticle function
-            $message = $this->userModel->requestArticle($product, $amount, $reason);
+            $message = $this->userModel->requestArticle($naam, $studentennummer, $item);
 
             if ($message = "success") {
               //Gelukt
@@ -46,6 +46,6 @@ class Students extends Controller
 
 }
 
-    $this->view('students/index', $data);
+    $this->view('students/request', $data);
   }
 }

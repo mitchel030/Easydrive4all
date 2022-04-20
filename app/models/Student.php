@@ -9,16 +9,16 @@ class Student
   }
 
   // Request article function
-  public function requestArticle($product, $amount, $reason) {
-    $p = $product;
-    $a = $amount;
-    $r = $reason;
+  public function requestArticle($naam, $studentennummer, $item) {
+    $p = $naam;
+    $a = $studentennummer;
+    $r = $item;
 
     //SQL Statement
     $sql = "INSERT INTO `request` 
                             (`id`,
-                             `product`, 
-                             `amount`, 
+                             `naam`, 
+                             `studentennummer`, 
                              `description`) 
                             VALUES 
                             (NULL, 
