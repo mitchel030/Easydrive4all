@@ -10,21 +10,21 @@ class Student
 
   // Request article function
   public function requestArticle($naam, $studentennummer, $item) {
-    $p = $naam;
-    $a = $studentennummer;
-    $r = $item;
+    $n = $naam;
+    $sn = $studentennummer;
+    $i = $item;
 
     //SQL Statement
     $sql = "INSERT INTO `request` 
                             (`id`,
                              `naam`, 
                              `studentennummer`, 
-                             `description`) 
+                             `item`) 
                             VALUES 
                             (NULL, 
-                            '$p', 
-                            '$a', 
-                            '$r');";
+                            '$n', 
+                            '$sn', 
+                            '$i');";
 
 
     // Prepare sql statement

@@ -11,21 +11,21 @@
                 <div class="card-body">
                     <p class="card-text">
 
-                    <form action="" method="POST" class="form">
+                    <form action="<?= URLROOT ?>/students/request" method="POST" class="form">
                         <div class="row">
                             <div class="col-6">
                                 <label class="visually-hidden">Naam</label>
-                                <input type="naam" name="inputNaam" class="form-control" id="inputnaam" placeholder="Naam">
+                                <input type="naam" name="naam" class="form-control" id="naam" placeholder="Naam">
                             </div>
                             <div class="col-6">
                                 <label class="visually-hidden">Studentennummer</label>
-                                <input type="studentennummer" name="inputStudentennummer" class="form-control" id="inputstudentennummer" placeholder="Studentennummer">
+                                <input type="studentennummer" name="studentennummer" class="form-control" id="studentennummer" placeholder="Studentennummer">
                             </div>
                             <br></br>
                         </div>
                         <div class="col-12">
                             <label class="visually-hidden">Item</label>
-                            <input type="item" name="inputItem" class="form-control" id="inputitem" placeholder="Item">
+                            <input type="item" name="item" class="form-control" id="item" placeholder="Item">
                         </div>
                         <br></br>   
                         <div class="row">

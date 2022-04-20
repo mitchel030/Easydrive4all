@@ -22,9 +22,9 @@ class Students extends Controller
         if (isset($_POST["submit"])) 
         {
           // Put post values into variables
-          $naam = $_POST["inputnaam"];
-          $studentennummer = $_POST["inputstudentennummer"];
-          $item = $_POST["inputitem"];
+          $naam = $_POST["naam"];
+          $studentennummer = $_POST["studentennummer"];
+          $item = $_POST["item"];
 
           //Check if variables are not empty
           if (!empty($naam) && !empty($studentennummer) && !empty($item)) 
