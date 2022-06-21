@@ -23,7 +23,20 @@
         return 0;
     }
   }
-   
+  public function createLeerling($post) 
+  {
+    try {
+      $this->db->query("INSERT INTO");
+      $this->db->bind(':email', NULL, PDO::PARAM_INT);
+      $this->db->bind(':mededelingenstudent', $post["mededelingenstudent"], PDO::PARAM_STR);
+      
+      return $this->db->execute();
+    
+    } catch (PDOException $e) {
+        logger(__FILE__, __METHOD__, __LINE__, $e->getMessage());
+        return 0;
+    }
+  }
   }
 
 ?>

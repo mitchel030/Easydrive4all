@@ -23,6 +23,20 @@
         return 0;
     }
   }
+  public function createInstructor($post) {
+    try {
+      $this->db->query("INSERT INTO");
+
+      $this->db->bind(':id', NULL, PDO::PARAM_INT);
+      $this->db->bind(':mededelingeninstructeurs', $post["mededelingeninstructeurs"], PDO::PARAM_STR);
+      
+      return $this->db->execute();
+    
+    } catch (PDOException $e) {
+        logger(__FILE__, __METHOD__, __LINE__, $e->getMessage());
+        return 0;
+    }
+  }
 
   
   
