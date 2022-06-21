@@ -1,26 +1,22 @@
 <?php
-//Load the modal and the view
-class Controller
-{
-  public function model($model)
-  {
-    //Require model file
-    require_once '../app/models/' . $model . '.php';
-    //Instantiate model
+// Dit wordt de parentclass van alle andere controller
+// We loaden de model en de view
+
+class Controller {
+  protected function model($model) {
+    require_once('../app/models/' . $model . '.php');
     return new $model();
   }
 
-  public function view($view, $data = [])
-  {
+  protected function view($view, $data = []) {
+    // hier word gekeken of je view bestaat zo niet voert die else uit en krijg je de error view bestaat niet
     if (file_exists('../app/views/' . $view . '.php')) {
-      require_once '../app/views/' . $view . '.php';
+      require_once('../app/views/' . $view . '.php');
     } else {
-      die("View does not exist.");
+      die('View bestaat niet');
     }
   }
-  public function redirect($url)
-	{
-		header('Location: ' . URLROOT . '/' . $url);
-		exit;
-	}
 }
+// -> de parent class ookwel baseclass genoemt moet altijd protected 
+// waarom dit moet omdat andere niet bij de code moeten kunnen de parent class 
+// zorgt alleen voor de childclass of te wel subclass en niet voor de andere!!

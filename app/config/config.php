@@ -1,15 +1,11 @@
 <?php
-//Database params
-define('DB_HOST', 'localhost'); //Add your db host
-define('DB_USER', 'root'); // Add your DB root
-define('DB_PASS', ''); //Add your DB pass
-define('DB_NAME', 'mvcexamen'); //Add your DB Name
+define('DB_HOST', 'localhost');
+define('DB_USER', 'YusufExamen'); //Maak nieuwe gebruiker aan!
+define('DB_PASS', 'Sanane68'); //Met wachtwoord
+define('DB_NAME', 'examen2022'); //database name
 
-//APPROOT
-define('APPROOT', dirname(dirname(__FILE__)));
+define('APPROOT', dirname(dirname(__FILE__))) ;
 
-//URLROOT (Dynamic links)
-define('URLROOT', 'http://www.easydrivefourall.org');
-
-//Sitename
-define('SITENAME', 'Examen EasyDrive4All');
+define('URLROOT', 'http://www.easydrive4all.org'); //website url
+define('SITENAME', 'easydrive4all');
+?>
