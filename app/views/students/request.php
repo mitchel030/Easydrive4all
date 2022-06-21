@@ -7,12 +7,12 @@
         </div>
         <!-- Content -->
         <div class="content col-10">
-            <h1>Driving Lessons</h1>
+            <h1>My Driving Lessons</h1>
             <div class="card">
                 <div class="card-body">
                     <p class="card-text">
                     <div class="content col-10">
-      <h1 class="text-center">Driving Lessons</h1>
+      <h1 class="text-center">My Driving Lessons</h1>
       <table class="table table-hover table-striped">
         <thead>
           <tr>
