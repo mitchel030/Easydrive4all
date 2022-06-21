@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 21 jun 2022 om 09:01
+-- Gegenereerd op: 21 jun 2022 om 09:09
 -- Serverversie: 5.7.31
 -- PHP-versie: 7.3.21
 
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `leerling` (
 --
 
 INSERT INTO `leerling` (`id`, `Voornaam`, `Tussenvoegsel`, `Achternaam`, `Woonadres`) VALUES
-(1, 'hans', '', 'odijk', 'utrecht 3553dd'),
+(1, 'hans', '', 'bart', '3553dd, Utrecht'),
 (2, 'joost', 'van', 'boom', '3560DG, Utrecht'),
 (3, 'brian', '', 'segakindi', '3223PP, Nieuwegein'),
 (4, 'yassin', '', 'karimi', '3541FP, Utrecht'),
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `rijles` (
 --
 
 INSERT INTO `rijles` (`id`, `InstructeurId`, `LeerlingId`, `Datum`, `Tijd`) VALUES
-(1, 1, 1, '20--06-2022', '20:00:00'),
+(1, 1, 1, '20-6-2022', '20:00:00'),
 (2, 2, 2, '25-6-2022', '12:00:00'),
 (3, 3, 3, '13-7-2022', '15:00:00'),
 (4, 4, 4, '24-6-2022', '13:30:00'),
