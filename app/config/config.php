@@ -8,4 +8,5 @@ define('APPROOT', dirname(dirname(__FILE__))) ;
 
 define('URLROOT', 'http://www.easydrive4all.org'); //website url
 define('SITENAME', 'easydrive4all');
+
 ?>
