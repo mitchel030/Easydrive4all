@@ -16,7 +16,7 @@ class Instructors extends Controller {
       //Maak de inhoud voor de tbody in de view
       $rows .= "<tr>
                   <td>" . htmlentities($value->Naam, ENT_QUOTES, 'ISO-8859-1') . "</td>
-                  <td><a href='" . URLROOT . "/instructors/create/'><i class='bi bi-pencil-square'></i></a></td>
+                  <td><a href='" . URLROOT . "/instructors/create/$value->email'><i class='bi bi-pencil-square'></i></a></td>
                 </tr>";             
     }
     $data = [
@@ -27,16 +27,16 @@ class Instructors extends Controller {
     $this->view('instructors/index_instructors', $data);
   }
 
-  public function create() {
+  public function create($email = null) {
+    $email = ('email');
     /**
      * Default waarden voor de view create.php
      */
 
     $data = [
     'title' => '<h3>Voeg een mededeling toe</h3>',
-    'name' => '',
-    'mededelingeninstructeurs' => '',
-    'mededelingeninstructeursError' => ''
+    'Opmerking' => '',
+    'OpmerkingError' => ''
     ];
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -45,13 +45,13 @@ class Instructors extends Controller {
 
         $data = [
         'title' => '<h3>Voeg een mededeling toe</h3>',
-        'mededelingeninstructeurs' => trim($_POST['mededelingeninstructeurs']),
-        'mededelingeninstructeursError' => ''
+        'Opmerking' => trim($_POST['Opmerking']),
+        'OpmerkingError' => ''
         ];
 
         $data = $this->validateCreateForm($data);
     
-        if (empty($data['mededelingeninstructeurs']))
+        if (empty($data['Opmerking']))
         {
             if ($this->instructorModel->createInstructor($_POST)) {
                 header("Location:" . URLROOT . "/instructors/index");

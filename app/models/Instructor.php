@@ -13,7 +13,7 @@
     {
       // dit is een try hier in moet de code die uitgevoerd moet worden dus het ene wat die hoort te doen
       try{
-       $this->db->query("SELECT instructeurs1.Naam ,mededelingeninstructeurs.Opmerking FROM instructeurs1 INNER JOIN mededelingeninstructeurs ON mededelingeninstructeurs.Instructeur = instructeurs1.email;");
+       $this->db->query("SELECT instructeurs1.email ,instructeurs1.Naam ,mededelingeninstructeurs.Opmerking FROM instructeurs1 INNER JOIN mededelingeninstructeurs ON mededelingeninstructeurs.Instructeur = instructeurs1.email;");
        $result = $this->db->resultSet();
        return $result;
 // hier onder is een catch deze is samen met de try dus als de try niet goed lukt/werkt dan vangt die deze hier op in de cath
@@ -25,9 +25,10 @@
   }
   public function createInstructor($post) {
     try {
-      $this->db->query("INSERT INTO");
+      $this->db->query("INSERT INTO `mededelingeninstructeurs` (`ID`, `Opmerking`) VALUES (NULL, ':Instructeur', ':Opmerking');");
 
-      $this->db->bind(':id', NULL, PDO::PARAM_INT);
+      $this->db->bind(':ID', NULL, PDO::PARAM_INT);
+      $this->db->bind(':Opmerking', NULL, PDO::PARAM_INT);
       $this->db->bind(':mededelingeninstructeurs', $post["mededelingeninstructeurs"], PDO::PARAM_STR);
       
       return $this->db->execute();

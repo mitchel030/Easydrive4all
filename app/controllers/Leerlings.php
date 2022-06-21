@@ -18,7 +18,7 @@ class Leerlings extends Controller {
       // Maak de inhoud voor de tbody in de view
       $rows .= "<tr>
                     <td>" . htmlentities($value->Naam, ENT_QUOTES, 'ISO-8859-1') . "</td>
-                    <td><a href='" . URLROOT . "/leerlings/create/'><i class='bi bi-pencil-square'></i></a></td>
+                    <td><a href='" . URLROOT . "/leerlings/create/$value->email'><i class='bi bi-pencil-square'></i></a></td>
                   </tr>";           
     }
     

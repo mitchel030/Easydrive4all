@@ -9,11 +9,16 @@
     <tbody>
       <tr>        
         <td>
-          <label class= "form-label" for="opmerkinginstructeur">voeg een mededeling voor de instructeur</label>
-          <input class="form-control" type="text" name="opmerkinginstructeur" id="opmerkinginstructeur" value="<?= $data['mededelingeninstructeurs']; ?>">
+          <label class= "form-label" for="Opmerking">voeg een mededeling voor de instructeur</label>
+          <input class="form-control" type="text" name="Opmerking" id="Opmerking">
         </td>
       </tr>
       <tr>
+      <tr>
+        <td>
+          <input type="hidden" name="email" value="<?= $data["email"]; ?>">
+        </td>
+      </tr>
         <td>
           <input type="submit" value="Verzenden">
         </td>
