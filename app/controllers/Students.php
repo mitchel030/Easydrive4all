@@ -22,20 +22,18 @@ class Students extends Controller
         if (isset($_POST["submit"])) 
         {
           $data = [
-            'naam'=> $_POST['naam'],
-            'studentennummer'=> $_POST['studentennummer'],
-            'item'=> $_POST['item']
+            'instructorname'=> $_POST['instructorname'],
+            'drivinglessondate'=> $_POST['drivinglessondate'],
           ];
           // Put post values into variables
-          $naam = $_POST["naam"];
-          $studentennummer = $_POST["studentennummer"];
-          $item = $_POST["item"];
+          $instructorname = $_POST["instructorname"];
+          $drivinglessondate = $_POST["drivinglessondate"];
 
           //Check if variables are not empty
-          if (!empty($naam) && !empty($studentennummer) && !empty($item)) 
+          if (!empty($instructorname) && !empty($drivinglessondate)) 
           {
             //Initiate requestArticle function
-            $message = $this->userModel->requestArticle($naam, $studentennummer, $item);
+            $message = $this->userModel->requestArticle($instructorname, $drivinglessondate);
 
             if ($message = "success") {
               //Gelukt
@@ -54,18 +52,10 @@ class Students extends Controller
         $requestRows = "";
         foreach ($requests as $r) {
           $requestRows .= "<tr>";
-          $requestRows .= "<td>".$r->studentenid."</td>";
-          $requestRows .= "<td>".$r->naam."</td>";
-          $requestRows .= "<td>".$r->studentennummer."</td>";
-          $requestRows .= "<td>".$r->item."</td>";
+          $requestRows .= "<td>".$r->ID."</td>";
+          $requestRows .= "<td>".$r->date."</td>";
+          $requestRows .= "<td>".$r->name."</td>";
           $requestRows .= "</tr>";
-          $requestRows .= "<td>
-														<a class='btn btn-xs btn-info' href=/students/edit?studentenid=$r->studentenid>Edit
-													</td>";
-			$requestRows .= "<td>
-														<a class='btn btn-xs btn-info' href=/students/destroy?studentenid=$r->studentenid>Delete
-													</td>";
-			$requestRows .= "</tr>";
         }
 
 
@@ -77,31 +67,4 @@ class Students extends Controller
 
     } 
   }
-  public function edit()
-	{
-		$data = $this->userModel->edit();
-		$this->view('students/edit', $data);
-	}
-
-	//Updates the information in database through userModel
-	public function update($studentenid)
-	{
-		$naam = $_POST['naam'];
-    var_dump($naam);
-		$studentennummer = $_POST['studentennummer'];
-		$item = $_POST['item'];
-
-		$this->userModel->update($studentenid, $naam, $studentennummer, $item);
-		//Redirect to students view
-		$this->redirect('students');
-	}
-
-	//Delete through userModel and redirect to students view
-	public function destroy()
-	{
-		$this->userModel->destroy();
-
-		$this->redirect('students');
-	}
-
 }

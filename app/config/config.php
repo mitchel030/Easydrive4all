@@ -3,13 +3,13 @@
 define('DB_HOST', 'localhost'); //Add your db host
 define('DB_USER', 'root'); // Add your DB root
 define('DB_PASS', ''); //Add your DB pass
-define('DB_NAME', 'rentmbo'); //Add your DB Name
+define('DB_NAME', 'mvcexamen'); //Add your DB Name
 
 //APPROOT
 define('APPROOT', dirname(dirname(__FILE__)));
 
 //URLROOT (Dynamic links)
-define('URLROOT', 'http://www.rent-mboutrecht.nl');
+define('URLROOT', 'http://www.easydrivefourall.org');
 
 //Sitename
-define('SITENAME', 'Uitleensysteem MBO Utrecht');
+define('SITENAME', 'Examen EasyDrive4All');
