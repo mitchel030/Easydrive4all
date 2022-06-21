@@ -12,7 +12,7 @@
 		  </div>
           <div class="form-group">
 		    <label>opmerking</label>
-		    <input type="text" class="form-control" name="opmerking" placeholder="Enter outstanding" value="<?= $data->opmerking; ?>">
+		    <input type="text" class="form-control" name="opmerking" placeholder="Enter comment" value="<?= $data->opmerking; ?>">
 		  </div>
 		  <button type="submit" class="btn btn-primary">Submit</button>
 		</form>

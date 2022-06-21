@@ -22,7 +22,7 @@ class Instructors extends Controller
               $leerlingRow .= "</tr>";
             }
 
-            // Send array of data with the view to leerling/index, include overview data (rows) in an array
+            // Send array of data with the view to instructor/index, include overview data (rows) in an array
             $userHTML = $leerlingRow;
             // Initiate companies/index view
               $this->view('/instructors/index', $indexData = [
