@@ -7,9 +7,9 @@ class Instructors extends Controller
   }
 
   public function index()
-        {   // Initiate viewLeerling function in models/Leerling.php and put the result in $LeerlingIndexOverview
+        {   // Initiate viewLeerling function in models/instructor.php and put the result in $InstructorIndexOverview
             $leerlingdata = $this->userModel->getData();
-            // Declare leerlingRows variable as a string
+            // Declare InstructorRows variable as a string
             $leerlingRow = "";
             // For each row, write a HTML row with data
             foreach ($leerlingdata as $as) {
@@ -41,7 +41,7 @@ class Instructors extends Controller
 		$opmerking = $_POST['opmerking'];
 
 		$this->userModel->update($id, $datum, $leerling, $opmerking);
-		//Redirect to warehouseadmins view
+		//Redirect to instructor view
 		$this->redirect('instructors/index');
 	}
         
