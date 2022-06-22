@@ -2,7 +2,6 @@
   require APPROOT . '/views/includes/header.php';
   ?>
 <?php echo $data["title"]; ?>
-<button><a href="<?=URLROOT;?>/countries/create">nieuwe record</a></button>
 
 <table class="table table-hover">
   <thead>

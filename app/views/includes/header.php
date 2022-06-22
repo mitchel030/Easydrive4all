@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="<?= URLROOT; ?>/public/css/style.css">
 
     
-    <title>De landenoverzicht</title>
+    <title>Komende lessen</title>
   </head>
   <body>
     <!-- hier komt de content output van je controller -->

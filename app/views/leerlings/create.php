@@ -6,12 +6,15 @@
   // var_dump($data);
 ?>
 
+<form method="post">
+
     <table>
     <tbody>
           <tr>        
             <td>
-              <label class= "form-label" for="Reden">Naam van het land</label>
+              <label class= "form-label" for="Reden">Voeg hier een reden van annulering</label>
               <input class="form-control" type="text" name="Reden" id="Reden" value="<?= $data['Reden']; ?>">
+              <div class="errorForm"><?= $data['RedenError']; ?></div>
             </td>
           </tr>
           <tr>
@@ -19,14 +22,10 @@
               <input type="submit" value="Verzenden">
             </td>
           </tr>
+          
           <tr>
             <td>
-            <input type="hidden" name="ID" value="<?= $data["row"]->ID; ?>">
-            </td>
-        </tr>
-          <tr>
-            <td>
-              <button><a href="<?= URLROOT; ?>/countries/index">ga terug naar de overzicht</a></button>
+              <button><a href="<?= URLROOT; ?>/leerlings/index">ga terug naar de les overzicht</a></button>
             </td>
           </tr>
           
