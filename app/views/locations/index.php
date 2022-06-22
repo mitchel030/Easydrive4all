@@ -28,3 +28,4 @@
         </div>
     </div>
 </div>
+<a href="<?= URLROOT ?>/locations/change">">link text</a>
