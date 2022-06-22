@@ -1,26 +1,17 @@
 <?php
-//Load the modal and the view
-class Controller
-{
-  public function model($model)
-  {
-    //Require model file
-    require_once '../app/models/' . $model . '.php';
-    //Instantiate model
+// Dit wordt de parentclass van alle andere controller
+// We loaden de model en de view
+class Controller {
+  protected function model($model) {
+    require_once('../app/models/' . $model . '.php');
     return new $model();
   }
 
-  public function view($view, $data = [])
-  {
+  protected function view($view, $data = []) {
     if (file_exists('../app/views/' . $view . '.php')) {
-      require_once '../app/views/' . $view . '.php';
+      require_once('../app/views/' . $view . '.php');
     } else {
-      die("View does not exist.");
+      die('View bestaat niet');
     }
   }
-  public function redirect($url)
-	{
-		header('Location: ' . URLROOT . '/' . $url);
-		exit;
-	}
 }
