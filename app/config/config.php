@@ -8,5 +8,5 @@ define('APPROOT', dirname(dirname(__FILE__))) ;
 
 define('URLROOT', 'http://www.easydrive4all.org');
 
-define('SITENAME', 'MVC Framework');
+define('SITENAME', 'Easydrive4all');
 ?>
